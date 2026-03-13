@@ -271,7 +271,7 @@ if st.session_state.view == "upload":
     st.markdown("<br>", unsafe_allow_html=True)
 
     if st.button("Generate Study Set →"):
-        notes = notes_input.strip()
+        notes = notes_input.strip() or st.session_state.extracted_text.strip()
         if not notes or len(notes) < 50:
             st.error("Please add some content first — upload a file or paste notes.")
         else:
